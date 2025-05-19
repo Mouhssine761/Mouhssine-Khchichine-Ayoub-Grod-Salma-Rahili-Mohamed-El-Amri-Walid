@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Argument Evaluator</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Argument Evaluator</h1>
+
+    <!-- Submit one argument -->
+    <form th:action="@{/submit}" method="post" class="argument-form" style="align-items: flex-end;">
+        <label>
+            Speaker:
+            <input type="text" name="speaker" required />
+        </label>
+        <label>
+            Argument:
+            <input type="text" name="text" required />
+        </label>
+        <button type="submit" style="align-self: flex-end;">Send</button>
+    </form>
+
+    <!-- Show last feedback -->
+    <div th:if="${lastDecision}" class="feedback">
+        <h2>Feedback</h2>
+        <p>
+            <strong th:text="${lastDecision.speaker}">Speaker</strong>:
+            <span th:text="${lastDecision.text}">Argument text</span>
+        </p>
+        <p>Will work? <em th:text="${lastDecision.willWork}">yes/no</em></p>
+        <p>Reason: <span th:text="${lastDecision.reason}">explanation</span></p>
+    </div>
+
+    <hr/>
+
+    <!-- History of all arguments -->
+    <h2>History</h2>
+    <ul class="history-list">
+        <li th:each="d : ${history}">
+            <strong th:text="${d.speaker}">Speaker</strong>:
+            <span th:text="${d.text}">Argument</span>
+        </li>
+    </ul>
+
+    <!-- Request full summary -->
+    <form th:action="@{/summary}" method="post" class="summary-form" style="align-items: flex-end;">
+        <button type="submit" style="align-self: flex-end;">Get Summary</button>
+    </form>
+
+    <!-- Show summary -->
+    <div th:if="${summary}" class="summary-box">
+        <h2>Summary</h2>
+        <p th:text="${summary.summary}">Your cohesive conclusion will appear here.</p>
+    </div>
+</div>
+</body>
+</html>

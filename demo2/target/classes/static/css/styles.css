@@ -1,0 +1,111 @@
+/* styles.css */
+
+/* Base */
+/* test override */
+body { background: #8ab1c7 !important; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+    padding: 2rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #34495e;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 280px;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+button {
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #1f618d;
+}
+
+/* Feedback Card */
+.feedback {
+    background-color: #ffffff;
+    border-left: 4px solid #2980b9;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.feedback p {
+    margin: 0.5rem 0;
+}
+
+/* History List */
+ul.history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.history-list li {
+    background-color: #ffffff;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+/* Summary Box */
+.summary-box {
+    background-color: #ffffff;
+    border-left: 4px solid #27ae60;
+    padding: 1rem 1.5rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.summary-box p {
+    margin: 0;
+}
